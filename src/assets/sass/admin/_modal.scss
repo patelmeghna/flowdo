@@ -1,0 +1,14 @@
+.modal {
+  &-content {
+    background: linear-gradient(180deg, $white 0%, #09c4ff 100%);
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+    padding: 50px 70px;
+  }
+
+  &-body {
+    border: 2px solid $dark;
+    padding: 45px;
+  }
+}

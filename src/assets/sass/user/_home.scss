@@ -1,0 +1,95 @@
+.greeting-text {
+  margin-bottom: 20px;
+
+  p {
+    color: $primary;
+    text-transform: capitalize;
+    font-size: 29px;
+    font-weight: 400;
+
+    &.time {
+      font-size: 33px;
+    }
+  }
+}
+
+.fluid {
+  &-detail {
+    &-wrap {
+      .title {
+        font-size: 29px;
+        color: $black;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &-wrap {
+    padding: 30px 0 30px 35px;
+    background: $white;
+    border-radius: 20px;
+    height: 123px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 15px;
+  }
+
+  &-name {
+    font-size: 33px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: $black;
+  }
+}
+
+.user-detail {
+  display: grid;
+  grid-template-columns: 70% 25.5%;
+  column-gap: 63px;
+}
+
+.subscription-detail {
+  font-size: 15px;
+  color: $black;
+}
+
+.flow {
+  &-num {
+    font-size: 35px;
+    font-weight: 500;
+    color: $primary;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &-type {
+    font-size: 16px;
+    color: $black;
+    text-align: center;
+  }
+}
+
+.unit {
+  font-size: 13px;
+  color: $black;
+  text-align: center;
+}
+
+.tank-container {
+  padding: 26px;
+  border-radius: 28px;
+  background-color: $white;
+  height: 403px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.container-head {
+  margin-bottom: 60px;
+}
+
+.pinned {
+  svg {
+    fill: rgba($color: $primary, $alpha: 0.5);
+  }
+}

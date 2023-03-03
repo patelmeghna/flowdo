@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Actor&display=swap");
+
+// global
+* {
+  @include spacing-0;
+  box-sizing: border-box;
+}
+
+// body {
+//   margin: 0;
+//   padding-inline: 85px;
+//   padding-top: 0;
+//   padding-bottom: 50px;
+//   font-size: 18px;
+//   overflow-x: hidden;
+//   min-height: 100vh;
+//   width: 100vw;
+//   background: rgb(239, 250, 247);
+//   background: linear-gradient(
+//     175deg,
+//     rgba(239, 250, 247, 1) 0%,
+//     rgba(183, 220, 239, 1) 100%
+//   );
+//   color: $dark;
+//   position: relative;
+//   text-transform: capitalize;
+// }
+
+a,
+p {
+  @include spacing-0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@for $i from 1 through 6 {
+  h#{i} {
+    @include spacing-0;
+  }
+}
+// global
+
+button {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background: none;
+}
