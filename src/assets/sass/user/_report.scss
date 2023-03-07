@@ -1,0 +1,45 @@
+.tab {
+    &-header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        .btn-tab {
+            background-color: rgba($color: $white, $alpha: 0.6);
+            color: $primary;
+            border: none;
+            padding: 7px 45px;
+            text-align: center;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: 600;
+            outline: none;
+            transition: background-color .3s ease;
+            margin-inline: 25px;
+
+            &:hover {
+                background-color: $white;
+            }
+
+            &.active {
+                background-color: $white;
+                color: $dark;
+            }
+        }
+    }
+}
+
+.seperator {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 30px;
+        background: $dark;
+        top: 9px;
+        left: 0;
+    }
+}

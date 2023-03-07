@@ -18,11 +18,11 @@ function Clock() {
   const dayOfMonth = time.getDate();
   let daySuffix = "th";
 
-  if (dayOfMonth == 1 || dayOfMonth == 21 || dayOfMonth == 31) {
+  if (dayOfMonth === 1 || dayOfMonth === 21 || dayOfMonth === 31) {
     daySuffix = "st";
-  } else if (dayOfMonth == 2 || dayOfMonth == 22) {
+  } else if (dayOfMonth === 2 || dayOfMonth === 22) {
     daySuffix = "nd";
-  } else if (dayOfMonth == 3 || dayOfMonth == 23) {
+  } else if (dayOfMonth === 3 || dayOfMonth === 23) {
     daySuffix = "rd";
   }
 

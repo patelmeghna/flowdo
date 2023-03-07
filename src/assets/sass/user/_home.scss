@@ -13,15 +13,15 @@
   }
 }
 
+.title {
+  font-size: 29px;
+  color: $black;
+  font-weight: 400;
+}
+
 .fluid {
   &-detail {
-    &-wrap {
-      .title {
-        font-size: 29px;
-        color: $black;
-        font-weight: 400;
-      }
-    }
+    &-wrap {}
   }
 
   &-wrap {

@@ -9,8 +9,6 @@ import ListItemWrap from "./ListItemWrap";
 
 const AdminPanel = () => {
   const [customer, setCustomer] = useState(false);
-  const [dealer, setDealer] = useState(false);
-  const [device, setDevice] = useState(false);
 
   return (
     <div className="home-screen">
@@ -48,9 +46,6 @@ const AdminPanel = () => {
                 />
 
                 <AddBtn
-                  onClick={() => {
-                    setDevice(true);
-                  }}
                   icon={
                     <svg
                       width="76"
@@ -69,9 +64,6 @@ const AdminPanel = () => {
                 />
 
                 <AddBtn
-                  onClick={() => {
-                    setDealer(true);
-                  }}
                   icon={
                     <svg
                       width="96"

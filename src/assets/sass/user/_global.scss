@@ -20,6 +20,8 @@ body {
   color: $dark;
   position: relative;
   text-transform: capitalize;
+  font-family: Avenir;
+  font-weight: 400
 }
 
 a,
@@ -52,7 +54,82 @@ button {
   background: none;
 }
 
-// .suffix {
-//   font-size: 16px;
-//   vertical-align: super;
-// }
+.form {
+  &-label {
+    font-size: 32px;
+    color: $secondary;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+
+  &-control {
+    border-radius: 10px;
+    border: 0.5px solid rgba($color: $black, $alpha: 0.3);
+    padding: 10px;
+    background: $white;
+    color: $black;
+    font-size: 22px;
+    width: 475px;
+    font-weight: 300; 
+    
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: rgba($color: $black, $alpha: 0.2);
+    }
+  }
+
+  &-input-group {
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+}
+
+.text-sm {
+  font-size: 18px;
+  color: $blue;
+  font-weight: 300;
+}
+
+.input-group {
+  border-radius: 10px;
+  border: 0.5px solid rgba($color: $black, $alpha: 0.3);
+  padding: 10px;
+  background: $white;
+
+  .form-control {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: none;
+  }
+
+  &-text {
+    background: none;
+    padding: 5px;
+    border: none;
+  }
+}
+
+.btn-submit {
+  background: $primary;
+  border: 1px solid $primary;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color: $white;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $secondary;
+    background: none;
+    border-color: $secondary;
+  }
+}

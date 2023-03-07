@@ -1,0 +1,25 @@
+.login {
+    &-screen {
+        padding-top: 100px;
+        padding-bottom: 35px;
+        height: calc(100vh - 85px);
+    }
+
+    &-body {
+        border: 1px solid $dark;
+        border-radius: 15px;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    &-bg {
+        overflow: hidden;
+    }
+}
+
+.logo-text {
+    color: $secondary;
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 70px;
+}

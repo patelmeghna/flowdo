@@ -8,6 +8,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar-wrap user">
       <SidebarIcon
+        link='/'
         active={location.pathname === "/" && "active"}
         icon={
           <svg
@@ -31,6 +32,8 @@ const Sidebar = () => {
       />
 
       <SidebarIcon
+        link='/report'
+        active={location.pathname === "/report" && "active"}
         icon={
           <svg
             width="61"

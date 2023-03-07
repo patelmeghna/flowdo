@@ -1,10 +1,12 @@
 @import "./variables";
 @import "~bootstrap/scss/bootstrap";
+@import "./font";
 @import "./mixins";
 @import "./global";
 @import "./header";
 @import "./keyframes";
 @import "./sidebar";
-
-// User styles
 @import "./home";
+@import "./login";
+@import "./report";
+@import "./dropdown";
