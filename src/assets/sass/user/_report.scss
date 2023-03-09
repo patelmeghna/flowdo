@@ -1,45 +1,325 @@
 .tab {
-    &-header {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
+  &-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 
-        .btn-tab {
-            background-color: rgba($color: $white, $alpha: 0.6);
-            color: $primary;
-            border: none;
-            padding: 7px 45px;
-            text-align: center;
-            border-radius: 15px;
-            cursor: pointer;
-            font-size: 22px;
-            font-weight: 600;
-            outline: none;
-            transition: background-color .3s ease;
-            margin-inline: 25px;
+    .btn-tab {
+      background-color: rgba($color: $white, $alpha: 0.6);
+      color: $primary;
+      border: none;
+      padding: 7px 45px;
+      text-align: center;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 22px;
+      font-weight: 600;
+      outline: none;
+      transition: background-color 0.3s ease;
+      margin-inline: 25px;
 
-            &:hover {
-                background-color: $white;
-            }
+      &:hover {
+        background-color: $white;
+      }
 
-            &.active {
-                background-color: $white;
-                color: $dark;
-            }
-        }
+      &.active {
+        background-color: $white;
+        color: $dark;
+      }
     }
+  }
 }
 
 .seperator {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    background: $dark;
+    top: 9px;
+    left: 0;
+  }
+}
+
+.recharts {
+  &-responsive-container {
+    background-color: $white;
+    border-radius: 30px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    margin-top: 15px;
+  }
+}
+
+input::-webkit-calendar-picker-indicator {
+  background-image: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+}
+
+.date-input {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 2px;
+    background: $primary;
+    right: 5px;
+    top: 10px;
+  }
+
+  &-group {
+    border-radius: 10px;
+    background: $white;
+    overflow: hidden;
+    width: fit-content;
+    padding: 0;
+    display: flex;
+    margin-right: 30px;
+  }
+
+  &-wrap {
+    margin-right: 130px;
+  }
+}
+
+.calendar-label {
+  padding: 10px 8px;
+  background: $primary;
+}
+
+.date-input,
+.time-input {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: 0;
+  padding: 10px 0 10px 15px;
+  width: fit-content;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.date-range {
+  margin-block: 30px;
+}
+
+.white-btn {
+  padding: 8px 47px;
+  background: $white;
+  color: $primary;
+  font-size: 23px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+
+  &:hover {
+    background: $primary;
+    color: $white;
+  }
+}
+
+.calendar-label {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.fluid-wrap.radio-card {
+  padding: 25px 40px;
+  height: auto;
+
+  .current-flow-info {
+    margin-left: 108px;
+  }
+}
+
+.radio-btn {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid $primary;
+  margin-right: 45px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: none;
+  }
+}
+
+.chart-radio-btn {
+  &:checked ~ .radio-btn {
+    &::after {
+      background-color: $primary;
+    }
+  }
+}
+
+.export-btn {
+  padding: 10px 15px;
+  font-size: 21px;
+  font-weight: 800;
+  background: $white;
+  border-radius: 14px;
+
+  button {
+    margin-left: 20px;
+  }
+}
+
+.table-filter-header {
+  .dropdown__button,
+  .dropdown__menu li {
+    font-size: 18px;
+  }
+
+  .date-input-wrap {
+    margin-right: 30px;
+  }
+
+  .calendar-label {
+    padding: 6px 8px;
+  }
+
+  .date-input,
+  .time-input {
+    padding: 7px 0px 7px 10px;
+  }
+}
+
+.table-content {
+  width: 100%;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: $primary;
+    padding: 11px;
     position: relative;
 
     &::after {
-        content: '';
-        position: absolute;
-        width: 1px;
-        height: 30px;
-        background: $dark;
-        top: 9px;
-        left: 0;
+      content: "";
+      position: absolute;
+      width: 0.75px;
+      height: 35px;
+      background: $dark;
+      right: 0;
     }
+
+    &:first-child {
+      border-bottom-left-radius: 12px;
+      border-top-left-radius: 12px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  tr {
+    &:first-child {
+      td {
+        padding-top: 22px;
+
+        &:first-child {
+          border-top-left-radius: 12px;
+        }
+        &:last-child {
+          border-top-right-radius: 12px;
+        }
+      }
+    }
+
+    &:last-child {
+      td {
+        padding-bottom: 22px;
+        &:first-child {
+          border-bottom-left-radius: 12px;
+        }
+        &:last-child {
+          border-bottom-right-radius: 12px;
+        }
+      }
+    }
+  }
+
+  th,
+  td {
+    text-align: center;
+  }
+
+  tbody {
+    background-color: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    top: 10px;
+  }
+
+  td {
+    padding: 11px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0.75px;
+      height: 35px;
+      background: $dark;
+      right: 0;
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+
+    span {
+      &.date {
+        padding-right: 33px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 1px;
+          height: 25px;
+          background-color: $primary;
+        }
+      }
+
+      &.time {
+        margin-left: 33px;
+      }
+    }
+  }
 }

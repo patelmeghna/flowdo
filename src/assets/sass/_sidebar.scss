@@ -13,6 +13,20 @@
           svg {
             fill: $black;
 
+            &.dealer-icon {
+              fill: none;
+            }
+
+            .black-rect {
+              stroke: $dark;
+              stroke-opacity: 1;
+            }
+
+            .black-path {
+              fill: $dark;
+              fill-opacity: 1;
+            }
+
             path {
               fill: $black;
             }

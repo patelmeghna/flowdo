@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FormControl, FormLabel, FormSelect, Modal } from "react-bootstrap";
 const apiurl = process.env.REACT_APP_BASE_URL;
 
-const AddCustomer = (props) => {
+const AddDealer = (props) => {
   const [customer, setCustomer] = useState("");
   const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
@@ -12,7 +12,7 @@ const AddCustomer = (props) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [device, setDevice] = useState("");
   const [deviceList, setDeviceList] = useState([]);
-  const [customerId, setCustomerId] = useState();
+  const [customerId, setCustomerId] = useState("");
 
   const getList = async () => {
     fetch(`${apiurl}/view/device/list`, {
@@ -31,15 +31,13 @@ const AddCustomer = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log("customerId updated:", customerId);
-
     axios.post(`${apiurl}/assign/customer`, {
       deviceId: device,
-      customerId,
+      dealerId: customerId,
     });
   }, [customerId]);
 
-  const filteredData = deviceList.filter((item) => item.customer_id === null);
+  const filteredData = deviceList.filter((item) => item.dealer_id === null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,16 +55,23 @@ const AddCustomer = (props) => {
 
     if (confirmPassword === password) {
       try {
-        const response = await axios.post(`${apiurl}/add/customer`, {
-          name: customer,
-          company_name: company,
-          mobile_no: phone,
-          email_id: email,
-          password,
-        });
-        setCustomerId(response.data.customer.id);
-
+        const response = await axios
+          .post(`${apiurl}/add/dealer`, {
+            name: customer,
+            company_name: company,
+            mobile_no: phone,
+            email_id: email,
+            password,
+          })
+          .then((res) => {
+            // setCustomerId(res.data.customer.id);
+            console.log(res.data);
+          });
         props.onHide();
+
+        if (response.message === "this email is already use") {
+          alert("this email is already use");
+        }
       } catch (error) {
         console.log(error);
       }
@@ -107,11 +112,11 @@ const AddCustomer = (props) => {
         </svg>
       </button>
       <Modal.Body>
-        <h4 className="modal-title">Add Customer</h4>
+        <h4 className="modal-title">Add Dealer</h4>
         <form action="" onSubmit={handleSubmit} className="modal-form">
           <div className="form-fields">
             <div>
-              <FormLabel>Customer Name</FormLabel>
+              <FormLabel>Dealer Name</FormLabel>
               <FormControl
                 value={customer}
                 onChange={(e) => setCustomer(e.target.value)}
@@ -169,17 +174,19 @@ const AddCustomer = (props) => {
             </div>
 
             <div>
-              <FormLabel>Add Device</FormLabel>
               {filteredData?.length > 0 && (
-                <FormSelect
-                  value={device}
-                  onChange={(e) => setDevice(e.target.value)}
-                >
-                  <option value="">Select Device</option>
-                  {filteredData.map((item) => (
-                    <option value={item.id}>{item.alias_name}</option>
-                  ))}
-                </FormSelect>
+                <>
+                  <FormLabel>Add Device</FormLabel>
+                  <FormSelect
+                    value={device}
+                    onChange={(e) => setDevice(e.target.value)}
+                  >
+                    <option value="">Select Device</option>
+                    {filteredData.map((item) => (
+                      <option value={item.id}>{item.alias_name}</option>
+                    ))}
+                  </FormSelect>
+                </>
               )}
             </div>
           </div>
@@ -188,7 +195,7 @@ const AddCustomer = (props) => {
             <button type="submit" className="white-btn">
               Save
             </button>
-            <button onClick={handleReset} className="white-btn mx-4">
+            <button onClick={handleReset} className="white-btn ms-4">
               Reset
             </button>
           </div>
@@ -198,4 +205,4 @@ const AddCustomer = (props) => {
   );
 };
 
-export default AddCustomer;
+export default AddDealer;

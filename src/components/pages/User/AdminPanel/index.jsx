@@ -4,38 +4,40 @@ import Greeting from "../../../utilities/Greeting";
 import FluidWrap from "./FluidWrap";
 import TankContainer from "./TankContainer";
 import { useNavigate } from "react-router-dom";
+const apiurl = process.env.REACT_APP_BASE_URL;
 
 const UserAdminPanel = () => {
   const [listDevices, setListDevices] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const headerToken = localStorage.getItem("accessToken");
 
   const getList = async () => {
-    console.log(headerToken)
-    fetch(`https://api.vncrobotics.com/view/devices`, {
-      method: 'post',
+    console.log(headerToken);
+    fetch(`${apiurl}/view/devices`, {
+      method: "post",
       headers: {
         Accept: "application/json",
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${headerToken}`
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${headerToken}`,
       },
     }).then((res) =>
       res.json().then((data) => {
-        console.log('res', data)
+        console.log("res", data);
 
         if (data.length > 0) {
           setListDevices(data);
         }
 
         if (res.status === 403) {
-          navigate('/login')
+          navigate("/login");
         }
-      }))
-  }
+      })
+    );
+  };
 
   useEffect(() => {
-    getList()
+    getList();
   }, []);
 
   console.log("listDevices", listDevices);
@@ -76,11 +78,10 @@ const UserAdminPanel = () => {
                 onPinClick={handlePinClick}
                 isPinned={item.isPinned}
                 name={item.alias_name}
-              // date={item.date}
-              // flow={item.flow}
-              // totalFlow={item.totalFlow}
+                // date={item.date}
+                // flow={item.flow}
+                // totalFlow={item.totalFlow}
               />
-              // <li key={item.deviceId}>{item.alias_name}</li>
             ))}
           </ul>
         </div>

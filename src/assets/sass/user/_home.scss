@@ -8,7 +8,7 @@
     font-weight: 400;
 
     &.time {
-      font-size: 33px;
+      font-size: 30px;
     }
   }
 }
@@ -16,14 +16,10 @@
 .title {
   font-size: 29px;
   color: $black;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .fluid {
-  &-detail {
-    &-wrap {}
-  }
-
   &-wrap {
     padding: 30px 0 30px 35px;
     background: $white;
@@ -56,9 +52,8 @@
 .flow {
   &-num {
     font-size: 35px;
-    font-weight: 500;
+    font-weight: 700;
     color: $primary;
-    margin-bottom: 10px;
     text-align: center;
   }
 

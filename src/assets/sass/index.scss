@@ -1,0 +1,21 @@
+@import "./variables";
+@import "~bootstrap/scss/bootstrap";
+@import "./font";
+@import "./mixins";
+@import "./global";
+@import "./header";
+@import "./sidebar";
+@import "./dropdown";
+
+// =========== user pages ============
+@import "./user/home";
+@import "./user/login";
+@import "./user/report";
+@import "./user/keyframes";
+// =========== user pages ============
+
+// =========== admin pages ============
+@import "./admin/dasboard";
+@import "./admin/customer-list";
+@import "./admin/modal";
+// =========== admin pages ============

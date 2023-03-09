@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import "../../../../assets/sass/admin/index.scss";
 // import Footer from "./Footer";
 import Sidebar from "./Sidebar";
+import "../../../../assets/sass/index.scss";
 
 const AdminLayout = () => {
   return (
